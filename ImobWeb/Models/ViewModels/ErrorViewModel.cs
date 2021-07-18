@@ -1,6 +1,6 @@
 using System;
 
-namespace ImobWeb.Models
+namespace ImobWeb.Models.ViewModels
 {
     public class ErrorViewModel
     {
