@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using ImobWeb.Models;
 
 namespace ImobWeb
 {
@@ -33,6 +35,9 @@ namespace ImobWeb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ImobWebContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("ImobWebContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
